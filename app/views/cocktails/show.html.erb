@@ -7,3 +7,18 @@
 
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'Back', cocktails_path %>
+
+<h2>add an ingredient/dose</h2>
+
+<%= link_to "add new ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+
+
+  <ul>
+  <% @cocktail.doses.each do |dose|  %>
+    <li>
+      <%= dose.description %>
+      <%= dose.ingredient.name %>
+    </li>
+    <% end %>
+  </ul>
+
